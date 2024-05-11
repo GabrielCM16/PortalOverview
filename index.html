@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Resumo de artigos</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Poppins&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="all mt-5 ">
+    <div class="mt-3 text-center titulo">
+      PortalOverview
+    </div>
+    <div class="">
+      <div class=" text-center ">
+        <div class="upload-box " id="upload-box">
+          <p>Arraste um arquivo ou clique abaixo para fazer upload:</p>
+          <input type="file" id="arquivo" class="d-none">
+          <label for="arquivo" class="upload-btn">Faça upload</label>
+        </div>
+        <img id="loading-gif" src="loading.gif" style="display: none;" alt="Loading..." />
+      </div>
+    </div>
+    <div class="imgSeta" id="imgSeta">
+      <img src="seta-para-baixo.png" alt="">
+    </div>
+    <div class="maisConfigs" id="maisConfigs" style="display: none;">
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Temperatura</span>
+        <span class="question-icon"
+          title="grau de criatividade (aleatoriedade e variação) das respostas geradas, Você pode obter respostas mais criativas e longas, ou respostas mais curtas e diretas."><img
+            src="sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputTemperature" min="0" max="10" value="5">
+        <span class="valorTemperature">5</span>
+      </div>
+
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Configurações de segurança</span>
+        <p>  &nbsp;&nbsp;Ajuste a probabilidade de você ver respostas que podem ser prejudiciais.<br> &nbsp;&nbsp;O conteúdo é bloqueado com base na probabilidade de ser prejudicial.<br> &nbsp;&nbsp;Valores mais altos implicam em mais bloqueios,<br> &nbsp;&nbsp;valores menores em menos bloqueios da IA.</p>
+      </div>
+
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Assédio</span>
+        <span class="question-icon" title="Categoria: Assédio"><img src="sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputAssedio" min="0" max="10" value="5">
+        <span class="valorAssedio">5</span>
+      </div>
+    
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Discurso de ódio</span>
+        <span class="question-icon" title="Categoria: Discurso de ódio"><img src="sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputOdio" min="0" max="10" value="5">
+        <span class="valorOdio">5</span>
+      </div>
+    
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Conteúdo sexualmente explícito</span>
+        <span class="question-icon" title="Categoria: Conteúdo sexualmente explícito"><img src="sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputSexual" min="0" max="10" value="5">
+        <span class="valorSexual">5</span>
+      </div>
+    
+      <div class="DivinputTemperature">
+        <span class="temperature-label">Conteúdo perigoso</span>
+        <span class="question-icon" title="Categoria: Conteúdo perigoso"><img src="sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputPerigoso" min="0" max="10" value="5">
+        <span class="valorPerigoso">5</span>
+      </div>
+
+    </div>
+    <div class="mt-3 ">
+      <div id="topics" class="topics">
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>©Copyright 2024 by Gabriel. All rights reversed.</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

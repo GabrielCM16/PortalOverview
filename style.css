@@ -1,0 +1,163 @@
+
+.upload-box {
+  border: 2px dashed #007bff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  background-color: rgb(9, 0, 179, 0.65);
+  width: auto;
+}
+.upload-btn {
+  background-color: #3e23d7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+}
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.DivinputTemperature {
+  position: relative;
+  margin-bottom: 20px; /* Apenas para dar espaço para visualizar a tooltip */
+}
+
+.question-icon {
+  cursor: pointer;
+}
+
+.question-icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  display: inline-block;
+  overflow: hidden; /* Esconder qualquer conteúdo extra */
+}
+
+.question-icon img{
+  height: 25px;
+}
+
+.maisConfigs{
+  border: 2px dashed #f0a345;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  background-color: rgba(227, 0, 0, 0.65);
+  width: auto;
+}
+
+.imgSeta{
+  display: inline-block;
+  overflow: hidden; /* Esconder qualquer conteúdo extra */
+  cursor: pointer; /* Mudar o cursor para um indicador de clique */
+}
+
+.imgSeta img{
+  display: block; /* Garantir que a imagem se comporte como um bloco */
+  height: 50px;
+}
+
+#gerar-resumo-btn{
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  padding: 20px;
+}
+
+.resposta{
+  padding-bottom: 10px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
+.container{
+  font-size: 20px;
+}
+
+.topic{
+  margin: 0 !important;
+}
+
+#topics ul {
+  margin: 0;
+  padding: 0;
+}
+
+#topics strong{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+#loading-gif{
+  scale: 50%;
+}
+
+#topics{
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 25px;
+  background-color: rgb(39, 138, 108, 0.5);
+  border-radius: 15px;
+  border: 2px dashed #09ba00;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 1200px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo{
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 70px;
+  padding-bottom: 50px;
+  text-shadow: 2px 2px 4px rgb(72, 0, 143); /* Deslocamento horizontal, deslocamento vertical, desfoque, cor da sombra */
+}
+
+body{
+  background-image: url("https://dynamicmedia.accenture.com/is/image/accenture/ChatGPT_Hero_2064x1238_black_bg?qlt=85&wid=1200&ts=1710889004221&$1024-PNG$&dpr=off");
+  background-size: 60%; /* Ajuste o valor conforme necessário */
+  background-repeat: no-repeat; /* Para garantir que a imagem não seja repetida */
+  background-position: center; /* Para centralizar a imagem */
+  align-items: flex-start; /* Alinhar no topo */
+  height: 100vh; /* Para ocupar toda a altura da tela */
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.all{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(50, 50, 50); /* Cor de fundo do rodapé */
+  padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+}
