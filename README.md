@@ -9,7 +9,8 @@ Este projeto foi desenvolvido como parte do curso "Imersão Inteligência Artifi
 - Fácil geração de resumos a partir de arquivos PDF.
 - Utilização da tecnologia de Processamento de Linguagem Natural (NLP) para criar resumos precisos e concisos divididos em tópicos.
 - Interface intuitiva e amigável para facilitar a interação dos usuários.
-- !Home PortalOverView(homePortalOverView.png)
+- <img src="homePortalOverView.png" alt="img">
+
 
 
 ## Como Utilizar
