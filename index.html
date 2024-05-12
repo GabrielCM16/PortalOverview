@@ -19,6 +19,14 @@
     <div class="mt-3 text-center titulo">
       PortalOverview
     </div>
+    <div class="inputAPIKey">
+      <input type="text" id="APIKey" class="APIKey" placeholder="Digite sua chave API aqui">
+      <span class="question-icon"
+        title="Crie uma chave de API para a API do Google AI Studio em: aistudio.google.com/app/apikey">
+        <img src="images/sinal-de-interrogacao.png" alt="">
+      </span>
+    </div>
+
     <div class="">
       <div class=" text-center ">
         <div class="upload-box " id="upload-box">
@@ -26,53 +34,59 @@
           <input type="file" id="arquivo" class="d-none">
           <label for="arquivo" class="upload-btn">Faça upload</label>
         </div>
-        <img id="loading-gif" src="loading.gif" style="display: none;" alt="Loading..." />
+        <img id="loading-gif" src="images/loading.gif" style="display: none;" alt="Loading..." />
       </div>
     </div>
     <div class="imgSeta" id="imgSeta">
-      <img src="seta-para-baixo.png" alt="">
+      <img src="images/seta-para-baixo.png" alt="">
     </div>
     <div class="maisConfigs" id="maisConfigs" style="display: none;">
       <div class="DivinputTemperature">
         <span class="temperature-label">Temperatura</span>
         <span class="question-icon"
           title="grau de criatividade (aleatoriedade e variação) das respostas geradas, Você pode obter respostas mais criativas e longas, ou respostas mais curtas e diretas."><img
-            src="sinal-de-interrogacao.png" alt=""></span>
+            src="images/sinal-de-interrogacao.png" alt=""></span>
         <input type="range" class="inputTemperature" min="0" max="10" value="5">
         <span class="valorTemperature">5</span>
       </div>
 
       <div class="DivinputTemperature">
         <span class="temperature-label">Configurações de segurança</span>
-        <p>  &nbsp;&nbsp;Ajuste a probabilidade de você ver respostas que podem ser prejudiciais.<br> &nbsp;&nbsp;O conteúdo é bloqueado com base na probabilidade de ser prejudicial.<br> &nbsp;&nbsp;Valores mais altos implicam em mais bloqueios,<br> &nbsp;&nbsp;valores menores em menos bloqueios da IA.</p>
+        <p> &nbsp;&nbsp;Ajuste a probabilidade de você ver respostas que podem ser prejudiciais.<br> &nbsp;&nbsp;O
+          conteúdo é bloqueado com base na probabilidade de ser prejudicial.<br> &nbsp;&nbsp;Valores mais altos implicam
+          em mais bloqueios,<br> &nbsp;&nbsp;valores menores em menos bloqueios da IA.</p>
       </div>
 
       <div class="DivinputTemperature">
         <span class="temperature-label">Assédio</span>
-        <span class="question-icon" title="Categoria: Assédio"><img src="sinal-de-interrogacao.png" alt=""></span>
-        <input type="range" class="inputAssedio" min="0" max="10" value="5">
-        <span class="valorAssedio">5</span>
+        <span class="question-icon" title="Categoria: Assédio"><img src="images/sinal-de-interrogacao.png"
+            alt=""></span>
+        <input type="range" class="inputAssedio" min="0" max="3" value="2">
+        <span class="valorAssedio">2</span>
       </div>
-    
+
       <div class="DivinputTemperature">
         <span class="temperature-label">Discurso de ódio</span>
-        <span class="question-icon" title="Categoria: Discurso de ódio"><img src="sinal-de-interrogacao.png" alt=""></span>
-        <input type="range" class="inputOdio" min="0" max="10" value="5">
-        <span class="valorOdio">5</span>
+        <span class="question-icon" title="Categoria: Discurso de ódio"><img src="images/sinal-de-interrogacao.png"
+            alt=""></span>
+        <input type="range" class="inputOdio" min="0" max="3" value="2">
+        <span class="valorOdio">2</span>
       </div>
-    
+
       <div class="DivinputTemperature">
         <span class="temperature-label">Conteúdo sexualmente explícito</span>
-        <span class="question-icon" title="Categoria: Conteúdo sexualmente explícito"><img src="sinal-de-interrogacao.png" alt=""></span>
-        <input type="range" class="inputSexual" min="0" max="10" value="5">
-        <span class="valorSexual">5</span>
+        <span class="question-icon" title="Categoria: Conteúdo sexualmente explícito"><img
+            src="images/sinal-de-interrogacao.png" alt=""></span>
+        <input type="range" class="inputSexual" min="0" max="3" value="2">
+        <span class="valorSexual">2</span>
       </div>
-    
+
       <div class="DivinputTemperature">
         <span class="temperature-label">Conteúdo perigoso</span>
-        <span class="question-icon" title="Categoria: Conteúdo perigoso"><img src="sinal-de-interrogacao.png" alt=""></span>
-        <input type="range" class="inputPerigoso" min="0" max="10" value="5">
-        <span class="valorPerigoso">5</span>
+        <span class="question-icon" title="Categoria: Conteúdo perigoso"><img src="images/sinal-de-interrogacao.png"
+            alt=""></span>
+        <input type="range" class="inputPerigoso" min="0" max="3" value="2">
+        <span class="valorPerigoso">2</span>
       </div>
 
     </div>

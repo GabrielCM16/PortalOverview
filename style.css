@@ -94,7 +94,10 @@
 
 .topic{
   margin: 0 !important;
+  list-style-type: none;
 }
+
+
 
 #topics ul {
   margin: 0;
@@ -105,6 +108,36 @@
   text-align: center;
   justify-content: center;
   display: flex;
+  text-decoration: underline;
+}
+
+.inputAPIKey {
+  text-align: center; /* Centraliza o texto dentro do div */
+  width: 310px;
+  display: flex;
+  align-items: center; /* Alinha itens verticalmente */
+  background-color: rgba(124, 2, 2, 0.65);
+}
+
+.inputAPIKey input {
+  width: 100%; /* Garante que o input ocupe toda a largura do div */
+  box-sizing: border-box; /* Garante que a largura do input inclua padding e bordas */
+  text-align: center; /* Centraliza o texto dentro do input */
+  background-color: rgba(227, 0, 0, 0.65);
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 15px;
+  color: white;
+  flex: 1;
+}
+.inputAPIKey .question-icon {
+  margin-left: 10px; /* Espaçamento entre o input e o ícone */
+  margin-right: 10px;
+}
+
+.inputAPIKey input::placeholder {
+  color: white;
 }
 
 #loading-gif{

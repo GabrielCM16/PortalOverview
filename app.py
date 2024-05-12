@@ -9,12 +9,24 @@ app = Flask(__name__)
 def upload_file():
     uploaded_file = request.files['file']
     temperature = request.form['temperature']
+    api_key = request.form['api_key']
+    hate = request.form['hate']
+    harassment = request.form['harassment']
+    sexually = request.form['sexually']
+    dangerous = request.form['dangerous']
+    
     print('temperature',temperature)
+    print('api_key',api_key)
+    print('hate', hate)
+    print('harassment', harassment)
+    print('sexually', sexually)
+    print('dangerous',dangerous)
+    
     if uploaded_file:
         # Extrai texto do PDF
         print('processando')
         texto = extrair_texto_pdf(uploaded_file)
-        gerado = gerarResponseGemini(texto, temperature)
+        gerado = gerarResponseGemini(texto, temperature, api_key, harassment, hate, sexually, dangerous)
         return jsonify({'resultado': gerado})  # Retorna a resposta em formato JSON
     else: return jsonify({'erro': 'Arquivo não recebido'})  # Retorna um erro em formato JSON
 
@@ -27,8 +39,8 @@ def add_cors_headers(response):
     return response
 
 
-def gerarResponseGemini(textPDF, input_temperature):
-    genai.configure(api_key="")
+def gerarResponseGemini(textPDF, input_temperature, api_key, harassment, hate, sexually, dangerous):
+    genai.configure(api_key=api_key)
     
     temperature = int(input_temperature) / 10 if int(input_temperature) > 0 else int(input_temperature)
     # Set up the model
@@ -37,24 +49,32 @@ def gerarResponseGemini(textPDF, input_temperature):
     "top_p": 1,
     "top_k": 0,
     "max_output_tokens": 2048,
+    "response_mime_type": "application/json",
     }
+    
+    thresholds = [
+        "BLOCK_NONE",
+        "BLOCK_ONLY_HIGH",
+        "BLOCK_MEDIUM_AND_ABOVE",
+        "BLOCK_LOW_AND_ABOVE"
+    ]
 
     safety_settings = [
     {
         "category": "HARM_CATEGORY_HARASSMENT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        "threshold": (thresholds[int(harassment)])
     },
     {
         "category": "HARM_CATEGORY_HATE_SPEECH",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        "threshold": (thresholds[int(hate)])
     },
     {
         "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        "threshold": (thresholds[int(sexually)])
     },
     {
         "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        "threshold": (thresholds[int(dangerous)])
     },
     ]
 
@@ -67,20 +87,9 @@ def gerarResponseGemini(textPDF, input_temperature):
     # Envie o texto para o Gemini
     print("enviando para o gemini")
     
-    prompt = f"Em português do Brasil, analise cuidadosamente o texto. Identifique seus pontos e tópicos principais. Não é necessário abordar todos. Em seguida, faça um resumo não tão curto. Retrate bem os resultados obtidos e principalmente a motivação ou a fundamentação teórica do texto, seus autores e outras informações que você achar importante. Apresente em tópicos, garantindo que não haja perda de dados ou quantidade de tópicos principais. Faça a resposta em formato de topicos onde um topico principal é entre ***nome do Topico*** e a resposta do topico é *resposta* esses sao apenas exemplos coloque os nomes certos dos topicos \n\n{textPDF}"
+    prompt = f"Em português do Brasil, analise cuidadosamente o texto. Identifique seus pontos e tópicos principais. Não é necessário abordar todos. Em seguida, faça um resumo não tão curto. Retrate bem os resultados obtidos e principalmente a motivação ou a fundamentação teórica do texto, seus autores e outras informações que você achar importante. Apresente em tópicos, garantindo que não haja perda de dados ou quantidade de tópicos principais. \n\n{textPDF}"
     response = chat.send_message(prompt)
     print("Response: ", response.text)
-    
-    # Dividindo a string em linhas
-    linhas = (response.text).splitlines()
-
-    # Removendo a primeira e última linha
-    linhas_sem_primeira_ultima = linhas[1:-1]
-
-    # Juntando as linhas novamente em uma única string
-    texto_sem_primeira_ultima = '\n'.join(linhas_sem_primeira_ultima)
-
-    print("\n texto sem a ", texto_sem_primeira_ultima)
 
     return response.text
 
