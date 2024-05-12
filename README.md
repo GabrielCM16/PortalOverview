@@ -9,6 +9,9 @@ Este projeto foi desenvolvido como parte do curso "Imersão Inteligência Artifi
 - Fácil geração de resumos a partir de arquivos PDF.
 - Utilização da tecnologia de Processamento de Linguagem Natural (NLP) para criar resumos precisos e concisos divididos em tópicos.
 - Interface intuitiva e amigável para facilitar a interação dos usuários.
+- Compatibilidade com Arquivos PDF: O código é capaz de extrair texto de arquivos PDF, tornando-o compatível com uma variedade de formatos de documentos amplamente utilizados.
+- Personalização da Temperatura de Geração: Os usuários têm a opção de personalizar a temperatura de geração dos resumos, permitindo ajustar o equilíbrio entre a criatividade e a precisão do texto gerado.
+- Configurações de Segurança Ajustáveis: O código permite ajustar as configurações de segurança para controlar o nível de filtragem de conteúdo potencialmente prejudicial, como discurso de ódio, assédio, conteúdo sexualmente explícito e conteúdo perigoso.
 - <img src="homePortalOverView.png" alt="img">
 
 
